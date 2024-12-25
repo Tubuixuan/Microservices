@@ -1,0 +1,109 @@
+# Python bytecode files
+__pycache__/       
+# Thư mục chứa các file bytecode Python được biên dịch (tự động tạo khi chạy Python).
+*.py[cod]          
+# Các file bytecode Python như .pyc, .pyo, .pyd.
+*.pyo              
+# Các file Python đã tối ưu hóa (optimized Python files).
+*.pyd              
+# Các file Python extension trên Windows.
+
+# Virtual environment
+venv/              
+# Thư mục môi trường ảo mặc định tên "venv".
+env/               
+# Thư mục môi trường ảo tùy chọn tên "env".
+ENV/               
+# Thư mục môi trường ảo viết hoa tên "ENV".
+*.env              
+# File môi trường (environment file) chứa thông tin cấu hình nhạy cảm như biến môi trường.
+
+# Logs and temporary files
+*.log              
+# File log, chứa các thông tin debug hoặc nhật ký hệ thống.
+*.tmp              
+# File tạm thời (temporary files).
+*.out              
+# File kết quả output của các lệnh hoặc chương trình.
+*.err              
+# File chứa thông tin lỗi (error output).
+*.bak              
+# File backup (sao lưu).
+*.swp              
+# File tạm thời của trình soạn thảo Vim.
+
+# Database files
+*.db               
+# File cơ sở dữ liệu SQLite.
+*.sqlite3          
+# File cơ sở dữ liệu SQLite phiên bản 3.
+
+# System files
+.DS_Store          
+# File hệ thống của macOS (metadata của thư mục).
+Thumbs.db          
+# File hệ thống của Windows dùng cho metadata của thư mục.
+
+# Pip dependency directories
+pip-wheel-metadata/  
+# Thư mục metadata do Pip tạo khi xây dựng gói (wheel).
+
+# Compiled files
+*.egg              
+# File nén chứa các gói Python đã biên dịch.
+*.egg-info/        
+# Thư mục metadata của gói Python được biên dịch.
+dist/              
+# Thư mục chứa các gói (packages) đã được xây dựng.
+build/             
+# Thư mục chứa file tạm thời được tạo trong quá trình xây dựng gói.
+
+# Docker related files
+docker-compose.override.yml  
+# File cấu hình Docker Compose được dùng để ghi đè mặc định.
+.dockerignore      
+# File tương tự .gitignore nhưng dùng để bỏ qua file trong quá trình Docker build.
+
+# Test result files
+.coverage          
+# File kết quả test coverage (phạm vi mã được kiểm thử).
+.tox/              
+# Thư mục được tạo bởi công cụ kiểm thử Tox.
+nosetests.xml      
+# File kết quả kiểm thử Nose.
+coverage.xml       
+# File kết quả coverage định dạng XML.
+*.cover            
+# File chứa thông tin coverage.
+*.gcov             
+# File thông tin coverage của GCC.
+*.gcda             
+# File dữ liệu coverage của GCC.
+*.gcno             
+# File dữ liệu coverage của GCC.
+
+# HTML reports and temporary test files
+htmlcov/           
+# Thư mục chứa báo cáo coverage định dạng HTML.
+test-results/      
+# Thư mục chứa kết quả kiểm thử tạm thời.
+
+# IDE specific files
+.vscode/           
+# Thư mục cấu hình của Visual Studio Code.
+.idea/             
+# Thư mục cấu hình của JetBrains IDE (PyCharm, IntelliJ, etc.).
+
+# Node.js (if used in microservices)
+node_modules/      
+# Thư mục chứa các gói phụ thuộc Node.js.
+npm-debug.log      
+# File log lỗi từ NPM.
+yarn-error.log     
+# File log lỗi từ Yarn.
+
+# Kubernetes related files
+*.yaml             
+# File cấu hình Kubernetes.
+*.yml              
+# File cấu hình Kubernetes (viết khác của YAML).
