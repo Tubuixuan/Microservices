@@ -6,7 +6,7 @@ import time
 REQUEST_COUNT = Counter("product_service_request_count", "Total HTTP requests", ["method", "endpoint"])
 REQUEST_LATENCY = Histogram("product_service_request_latency_seconds", "Request latency", ["endpoint"])
 
-def start_monitoring(port=8003):
+def start_monitoring(port=5001):
     """Khởi động server Prometheus metrics"""
     start_http_server(port)
     print(f"Prometheus metrics available at http://localhost:{port}")

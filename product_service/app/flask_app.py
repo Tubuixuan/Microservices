@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 app = Flask(__name__)
 
 # Khởi động Prometheus metrics
-start_monitoring(port=8003)
+start_monitoring(port=5001)
 
 @app.route("/")
 def home():
