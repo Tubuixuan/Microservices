@@ -105,5 +105,3 @@ yarn-error.log
 # Kubernetes related files
 *.yaml             
 # File cấu hình Kubernetes.
-*.yml              
-# File cấu hình Kubernetes (viết khác của YAML).
