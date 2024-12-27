@@ -1,3 +1,5 @@
+# Ignore data files
+data/
 # Python bytecode files
 __pycache__/       
 # Thư mục chứa các file bytecode Python được biên dịch (tự động tạo khi chạy Python).
