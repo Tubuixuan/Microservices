@@ -60,8 +60,6 @@ dist/
 build/             
 # Thư mục chứa file tạm thời được tạo trong quá trình xây dựng gói.
 
-# Docker related files
-docker-compose.override.yml  
 # File cấu hình Docker Compose được dùng để ghi đè mặc định.
 .dockerignore      
 # File tương tự .gitignore nhưng dùng để bỏ qua file trong quá trình Docker build.
@@ -104,6 +102,3 @@ npm-debug.log
 yarn-error.log     
 # File log lỗi từ Yarn.
 
-# Kubernetes related files
-*.yaml             
-# File cấu hình Kubernetes.

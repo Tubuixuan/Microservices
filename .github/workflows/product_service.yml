@@ -1,0 +1,74 @@
+name: CI/CD for Product Service
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  # Step 1: Linting
+  lint:
+    name: Lint Code
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.8"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install flake8
+      - name: Run flake8 linting
+        run: flake8 product_service/app
+
+  # Step 2: Run Unit Tests
+  test:
+    name: Run Unit Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.8"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r product_service/requirements.txt
+          pip install pytest
+      - name: Run pytest
+        run: pytest product_service/app/tests
+
+  # Step 3: Build and Push Docker Image
+  build:
+    name: Build and Push Docker Image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Log in to DockerHub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: Build Docker image
+        run: |
+          docker build -t your-dockerhub-username/product_service:latest product_service/
+      - name: Push Docker image
+        run: |
+          docker push your-dockerhub-username/product_service:latest
+
+  # Step 4: Deploy to Production
+  deploy:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy using Docker Compose
+        run: |
+          docker-compose -f docker-compose.yml up -d product_service
