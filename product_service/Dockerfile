@@ -1,14 +1,23 @@
-FROM python:3.11-slim  
-# Thay đổi phiên bản Python thành 3.11
+FROM python:3.11-slim
 
+# Thiết lập thư mục làm việc
 WORKDIR /app
 
-COPY . /app
+# Sao chép các file yêu cầu trước
+COPY requirements.txt /app/requirements.txt
 
-RUN pip install --no-cache-dir --upgrade pip  
-# Cập nhật pip trước khi cài đặt
-RUN pip install --no-cache-dir -r requirements.txt
+# Cập nhật pip và cài đặt các thư viện cần thiết
+RUN pip install --no-cache-dir --upgrade pip \
+    && pip install --no-cache-dir -r /app/requirements.txt
 
+# Sao chép toàn bộ mã nguồn
+COPY . /appv
+
+# Thiết lập biến môi trường (nếu cần)
+ENV PYTHONUNBUFFERED=1
+
+# Mở cổng cho dịch vụ
 EXPOSE 8001
 
+# Chạy dịch vụ với uvicorn
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8001"]

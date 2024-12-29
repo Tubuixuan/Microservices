@@ -102,3 +102,5 @@ npm-debug.log
 yarn-error.log     
 # File log lỗi từ Yarn.
 
+# Thư viện không dùng đến
+.backup
